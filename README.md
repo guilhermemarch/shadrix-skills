@@ -2,19 +2,24 @@
 
 Official agent skills for the hosted [Shadrix MCP](https://shadrix.xyz).
 
-## Install
+## Install without a package registry
 
-Discover the available skills:
-
-```bash
-npx skills add guilhermemarch/shadrix-skills --list
-```
-
-Install the Shadrix MCP skill for your detected coding agents:
+Clone the public repository and copy the skill into the directory used by your agent:
 
 ```bash
-npx skills add guilhermemarch/shadrix-skills --skill shadrix-mcp
+git clone --depth 1 https://github.com/guilhermemarch/shadrix-skills.git .shadrix-skills
+mkdir -p .agents/skills
+cp -R .shadrix-skills/skills/shadrix-mcp .agents/skills/shadrix-mcp
 ```
+
+Replace `.agents/skills/` when your client uses a dedicated location:
+
+| Client | Project location |
+|---|---|
+| Claude Code | `.claude/skills/shadrix-mcp/` |
+| Cursor | `.cursor/skills/shadrix-mcp/` |
+| OpenCode | `.opencode/skills/shadrix-mcp/` |
+| Codex and generic agents | `.agents/skills/shadrix-mcp/` |
 
 The skill and the MCP connection are separate. Configure your client with the Streamable HTTP endpoint:
 
