@@ -1,0 +1,13 @@
+interface:
+  display_name: "Shadrix MCP"
+  short_description: "Ensina agentes a construir interfaces com Shadrix"
+  default_prompt: "Use $shadrix-mcp para planejar, compor e validar esta interface com o catálogo Shadrix."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "shadrix"
+      description: "Servidor MCP hospedado do Shadrix"
+      transport: "streamable_http"
+      url: "https://mcp.shadrix.xyz/mcp"
+policy:
+  allow_implicit_invocation: true
